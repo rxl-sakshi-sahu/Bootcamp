@@ -6,8 +6,8 @@
 
 3) Write a program to add 3 to the ASCII value of the character 'd' and print the equivalent character.
 -> char ch = 'd';
-   int n = ch + 3;
-   System.out.println(n);  // convert to char
+   ch = ch + 3;
+   System.out.println(ch);  
    
  4)What is the size in bits for a 'byte' data type.
  -> 1 byte have 8 bits.
