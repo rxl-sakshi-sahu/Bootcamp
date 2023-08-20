@@ -1,0 +1,289 @@
+8m3WtA6GCUbX7hr -password new 
+
+
+Nitesh - Intellij
+Bug/PVS-17705
+https://rxlogixdev.atlassian.net/browse/PVS-20917
+
+story/PVS-18626
+table not exist/ alert fail on proc shivam
+alter sequence EXEC_CONFIG_SEQUENCE increment by 35009;
+select EXEC_CONFIG_SEQUENCE.nextval from dual;
+alter sequence EXEC_CONFIG_SEQUENCE increment by 1;
+select EXEC_CONFIG_SEQUENCE.nextval from dual;
+
+
+ALTER USER pvs quota unlimited on USERS;
+
+
+aws s3 cp s3://eng.rxlogix.com/Releases/PV_Suite_Installer/6.0/PV_Suite_Installer_6.0.zip .
+
+update pvs_quant_routines
+set hide = 1 where quant_routine_name like '%Ebgm'
+
+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 - AUDIT_LOG _ PERSONAL ACCESS TOKEN GITHUB
+
+
+git branch -m <oldname> <newname>                            //rename branch
+sudo openvpn --config engineering_vpn_isha.sharma@rxlogix.com_eng.ovpn
+        -----------pritunl vpn for internal env
+sudo openvpn --config client_vpn_Isha.Sharma@rxlogix.com_vpn.ovpn             -------------------client vpn
+
+
+chmod +x VNC-Viewer-6.20.113-Linux-x64     //make file executible
+
+
+ git add .
+ git commit -m "login functionality added"
+ git push -u origin evdasautodownload_login
+
+signalManagement.linkedConfigurations.enabled --- linked configurations
+
+config.signal.boot.status = true
+
+ctx.productAssignmentService.dum()
+
+OR
+ViewInstanceService viewInstanceService= ctx.getBean('viewInstanceService') //grails console service
+http://10.100.22.64:8080/reports/login/auth //reports-url
+
+git stash 
+git stash pop
+
+Cd /home/ec2-user/Logs
+tail -f Docker_Logs.log
+
+
+
+	ssh -i ~/Downloads/engineering_id_rsa  ec2-user@10.100.22.105
+passphrase - ClinicalSafety100
+sudo su
+rm -rf signal* ==== deploy krne se pehle
+ps -eaf | grep tomcat
+/root/pvsignal/.signal
+cd /usr/share/tomcat9/apache-tomcat-9.0.2/
+cd /home/reports/apache-tomcat-9.0.2/
+sh bin/startup.sh
+
+kill -9 10820
+sudo scp -r /home/pvr-user/PVD_UI_50 . (from another user to currect directory , same server)
+	scp  -i ~/Downloads/engineering_id_rsa  signal1.war ec2-user@10.100.22.246:~
+
+ mv /ec2-user/signal1.war /isha-sharma/tomcat/webapps/signal.war   move
+
+
+mv webapps tomcat ---rename webapps to tomcat
+
+# find /home -name tecmint.txt    ----find file by name under home directory
+
+isha-sharma || isha100 passwd 
+
+chmod 600 ~/Downloads/engineering_id_rsa 
+
+tail -100f catalina.out .....
+
+fuser -k -n tcp 7070
+sudo chown ec2-user:ec2-user PV_SIGNAL
+
+
+
+password encode decode ::
+
+com.rxlogix.RxCodec.encode('pvs')
+com.rxlogix.RxCodec.decode('encryptedformofpassowrd')
+
+
+CREATE USER pvs IDENTIFIED BY pvs DEFAULT TABLESPACE USERS QUOTA 250M ON USERS;
+GRANT CONNECT, CREATE TABLE, CREATE SESSION, RESOURCE TO pvs;
+commit;
+
+
+gradle build jacocoTestReport                   ( --cmd  for coverage report generation)
+
+grails test-app com.rxlogix.ReportControllerSpec --unit
+
+ lsof -t -i:8080
+sudo lsof -i -P -n | grep LISTEN.
+
+$ grails run-app --port=8090
+
+sudo find * / | grep snap | grep intellij-idea
+
+
+INTELLIJ
+
+rm ~/.config/JetBrains/IntelliJIdea2021.1/eval/idea211.evaluation.key && \sed -i '/evlsprt/d' ~/.config/JetBrains/IntelliJIdea*/options/other.xml && \rm -rf ~/.java/.userPrefs/jetbrains
+
+
+
+
+delete all in database
+DECLARE
+Begin
+ for c in (select table_name from user_tables) loop
+   execute immediate 'drop table '||c.table_name||' cascade constraints';
+ end loop;
+ commit;
+End;
+
+ 
+
+DECLARE
+Begin
+ for c in (select sequence_name from user_sequences) loop
+   execute immediate 'drop sequence '||c.sequence_name||'';
+ end loop;
+ commit;
+End;
+
+
+//tablename, rows from user_tables
+SELECT TABLE_NAME,
+TO_NUMBER(EXTRACTVALUE(XMLTYPE(DBMS_XMLGEN.GETXML('SELECT COUNT(*) CNT FROM '||TABLE_NAME)),'/ROWSET/ROW/CNT')) AS COUNT
+FROM USER_TABLES
+
+
+RCA
+
+Root Cause: As FAERS cases do not have followup numbers, the case number displayed null in the respective brackets for followup. This issue occured as the handling for followup number as null was done incorrectly for case number population.
+Corrective Action: N/A
+Permanent Fix: Handled case number population for followup number with null value .
+Impact Assessment: N/A
+Preventive Action : N/A
+
+	UPDATE DATABASECHANGELOG SET md5sum = '7:26a9ca5373e66399d9e45ae8885d41ab' where md5sum = '7:3582b17c69ec1fdb96a4f554ff36f3d5'
+
+UPDATE DATABASECHANGELOGLOCK SET LOCKED=0, LOCKGRANTED=null, LOCKEDBY=null where ID=1; //stuck changelock
+commit;
+
+
+
+
+include file: '2021-07-06-Primary_susp_pai_new_column.groovy'
+    include file: '2021-07-09-all-pt-field-added.groovy'
+    include file: '2021-07-23-add-config-nodename-column.groovy'
+
+DATASOURCE console pe chalane ke liye
+import com.rxlogix.util.*
+import groovy.sql.Sql
+def dataSource = ctx.dataSource_vaers
+Sql vaersSql = new Sql(dataSource)
+String vaersDate = ""
+String vaers_statement = SignalQueryHelper.vaers_date_range()
+ vaersSql.eachRow(vaers_statement, []) { resultSetObj ->
+                vaersDate = resultSetObj
+            }
+vaersDate
+
+
+console se aocolumns, then fetch view -- datatable issue
+
+
+	//username = 'PVS_DB_PVS_462'
+			//username = 'PVS_DB_QA_22_APR'
+			//username = 'PVS_APP_DEV4'
+			//username = 'PVS_APP_QA2'
+			//username = 'PVS_DB_APP_SG'			
+			//username = 'PVS_DB_46_DEV'
+			//username = 'PVS_APP_45_30AUG'
+			//username = 'PVS_APP_DEV4'
+			//username = 'PVS_DB_APP_SG'
+
+                   
+
+
+{"startDateTime":"2022-04-25T07:15+05:30","timeZone":{"name":"Asia/Kolkata","offset":"+05:30"},"recurrencePattern":"FREQ=HOURLY;INTERVAL=1;COUNT=2"}
+
+
+
+BULK ADD CONFIGURATION ::::
+import com.rxlogix.*
+def name = "ICR"
+for(int i =0 ; i < 350; i++){
+Configuration configurationInstance = new Configuration(name: name+i,type: Constants.AlertConfigType.SINGLE_CASE_ALERT, isEnabled: true,isDeleted: false, excludeFollowUp: true, selectedDatasource:"vaers", owner:ctx.userService.getUser(), assignedTo:ctx.userService.getUser(),priority: Priority.first()
+ ,modifiedBy:'Signal Dev',createdBy:'Signal Dev', productSelection: 'Test Product AJ Capsule 100 millimole')
+configurationInstance.save(flush:true)
+    
+}
+
+
+
+
+
+
+//Configuration.get(5).selectedDataSheet
+//import grails.converters.JSON
+//
+//def dataSheetsMap = JSON.parse('{"11":{"100001":"Core(Test Product Family AJ)"}}')
+//def insertStatement =''
+//dataSheetsMap.each { key, value ->
+//    value.each{ k,v->
+//         insertStatement += "INSERT INTO GTT_PVS_DS_INPUT_DATA (Bind_Id,Datasheet_Id, Datasheet_Name, Execution_Id) VALUES ('${key}','${k}','${v}', '5');"
+//    }
+//                }
+//
+
+
+
+
+spotfire {
+    server = "10.100.21.145"
+    port = 8443
+    path = "spotfire/wp/render/buepUJTHvHSVsuvd_R/analysis?file="
+    callbackUrl = "https://10.100.21.83:8445/signal/spotfire/rx_validate"
+    domainName = "rxlogix.com"
+    version = "7.11"
+    filename = "pvreports_template.html"
+    analysisRoot = "Development/6.0/PVA Code/Report Templates"
+    token_secret = "rxlogix"
+    defaultEmail = "pvreports@rxlogix.com"
+    vaccPath = "Vaccine Template"
+    drugPath = "Drug Template"
+    emailTitle = "Send Email"
+    wsdl_location = "http://10.100.6.44:80/SpotFireAutomation/JobExecutor.asmx?WSDL"
+    fileNameLimit = 200
+    fileNameCachedPeriod = 3600
+    protocol = "http"
+    keepAlive.interval = 30000
+    secureAccess = true
+    automationUsername = "spotfireadmin1141"
+    automationPassword= "oracle123"
+    session_interval = 7200
+    session_monitor_frequency = 20
+    automationServer = "10.100.21.145"
+    automationPort = 8443
+    automationProtocol = 'http'
+    libraryRoot = 'Development/6.0/PVA Reports 60'
+    libraryFolder = 'PVA Reports'
+    emailSubject = 'Signal Reports'
+    automationNTLM =false
+    faersAnalysisRoot = '/Development 5.5/Faers/PVA Code/Report Templates'
+    operationalReport.name='Signal Operational Report'
+    operationalReport.url='/Development 5.5/Signal_operational/Reports/Signal Operational Report'
+    riskSummaryReport.name='Signal Operational Report Risk Screen'
+    riskSummaryReport.url='/Development 5.4.2/Risk_Screen/Reports/Signal Operational Report Risk Screen'
+    productivityAndComplianceReport.url='Signal_54/ProductivityAndCompliance/Reports/Productivity and Compliance'
+    productivityAndComplianceReport.name='Productivity and Compliance'
+    operationalReport.hidingOptions=true
+    riskSummaryReport.hidingOptions=true
+    dataAnalysis.hidingOptions =true
+    fileBasedReportGen =false
+    fileFolder=''
+    symptoms_comanifestation = false
+}
+//insertStatement
+
+
+server xml ssl=false 
+
+https->http in config
+
+
+config.dueInStart.enabled
+config.dueInStartPoint.field
+config.pvsignal.showAutoGeneratedHistory
+
+GIT PULL ISSUE
+ssh-keygen -R github.com
+curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+    
