@@ -1,0 +1,18 @@
+
+********** Notes of Navin Reddy- Telusko *********
+
+Springboot uses the concept of single design pattern, i.e, the moment u start the application, it will give you the object.
+book,spring doc
+
+Beans
+getBean, @Component bean will create an object for you
+@Autowired - will search the obj by type in spring container
+@Qualifier - searches obj by name
+
+@Controller - handle all request
+servelet - send request for something, map
+@RequestMapping("Home") - whenever you get request a home, you execute the method written below it, something like public void Home()
+
+Springboot dont need external servers,have less configurations
+
+
