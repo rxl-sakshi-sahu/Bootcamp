@@ -1,12 +1,20 @@
 
 ********** Notes of Navin Reddy- Telusko *********
 
-Springboot uses the concept of single design pattern, i.e, the moment u start the application, it will give you the object.
 book,spring doc
 
 Beans
-getBean, @Component bean will create an object for you
-@Autowired - will search the obj by type in spring container
+getBean will create a new object for you
+
+@Component - will create object of only specified classes, (so that we wouldn't be using =new obj kinda thing)
+
+-> By default spring uses the concept of Singleton(will get only one instance) design pattern, i.e., it will give you the obj even without calling getBean
+
+-> but using Prototype, it will not create the obj, obj will be created only if you use getBean even if you use Component.
+-> We can search an object by name also using  @Qualifier("laptop") // obj name let's say = laptop
+whereas @Autowired searches by type
+
+@Autowired - will search the  obj by type in spring container, which basically connects the object 
 @Qualifier - searches obj by name
 
 @Controller - handle all request
@@ -14,5 +22,47 @@ servelet - send request for something, map
 @RequestMapping("Home") - whenever you get request a home, you execute the method written below it, something like public void Home()
 
 Springboot dont need external servers,have less configurations
+Springboot gives you a production ready application which you can deploy it on any server
 
-
+ LET'S CREATE AN APPLICATION
+ 
+ * Following MVC
+ 
+ 1) First create a controller and just like we do, declare a function within it, and also in spring, here we will use
+ @Controller so that whenever ur browser will have the request, your controller will make sure to handle it well.
+ @RequestMapping for mapping the url
+ and just like render, here u can use 
+ return "home.jsp";  ///it will return  home page content (like gsp)
+ (!important  ---  but note that it will only return that page if you will include the dependency of let say tomcat jasper(same version as that of tomcat server),
+ otherwise it will return a string simply i.e, home.jsp )
+ 
+ eg- 
+ 
+ *******************************
+ 
+ inside HomeController.java
+ 
+ //import packages
+ 
+ @Controller
+ public class HomeController
+ {
+ 	@RequestMapping("home")
+ 	public String home()
+ 	{
+ 	System.out.println("hi");
+ 	return "home.jsp";
+ 	}
+ }
+ // inside home.jsp
+ 
+ ..html
+ <body> 
+ Hello world
+ </body> 
+ 
+ ****************************************
+ 
+ 
+ will carry on after 1 hr ,
+ 
