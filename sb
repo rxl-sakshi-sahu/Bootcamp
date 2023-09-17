@@ -1,6 +1,10 @@
 
 ********** Notes of Navin Reddy- Telusko *********
 
+
+Springboot dont need external servers,have less configurations
+Springboot gives you a production ready application which you can deploy it on any server
+
 book,spring doc
 
 Beans
@@ -21,8 +25,9 @@ whereas @Autowired searches by type
 servelet - send request for something, map
 @RequestMapping("Home") - whenever you get request a home, you execute the method written below it, something like public void Home()
 
-Springboot dont need external servers,have less configurations
-Springboot gives you a production ready application which you can deploy it on any server
+* HttpServletRequest- Springboot connects with the available requested object without actually creating it
+(passing it as a parameter inside home function)
+
 
  LET'S CREATE AN APPLICATION
  
@@ -64,5 +69,7 @@ Springboot gives you a production ready application which you can deploy it on a
  ****************************************
  
  
- will carry on after 1 hr ,
+@RequestParam 
+
+
  
