@@ -292,7 +292,7 @@ curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/gith
 
 *********************************************************************************************************
 
-Work done - DS ( Data Specification), Bugs fixing, Story contribution (Shivam and Isha), Regression testing
+Work done - DS ( Design Specification),DB guide, Bugs fixing, Story contribution (Shivam and Isha), Regression testing
 PVS-6124 - export enhancement
 PVS-39929 - Case Narrative export
 
@@ -367,6 +367,13 @@ for connection of db first time, make seeding true, change the change lock by ab
 
 https://docs.fortinet.com/document/forticlient/7.2.0/linux-release-notes/213138/install-forticlient-linux-from-repo-fortinet-com%20star%201%20Install%20FortiClient%20(Linux)%20from%20repo.fortinet.com%20%7C%20(Linux)%20Release%20Notes
 
+
+FORTICLIENT
+
+ $ sudo apt autoremove forticlient
+ 
+ https://docs.fortinet.com/document/forticlient/7.2.0/linux-release-notes/213138/install-forticlient-linux-from-repo-fortinet-com
+
 **********************
 special characters - 
 是. 不. 了. 人. 我. 在. 有. 他. 这. 为. 之. 大. 来. 以. 个. 中. 上. 们 - Chinese 平仮名, ひらがな 片仮名, かたかな 漢字, かんじ - Japaense  ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ korean 𐐀 𐐁 𐐂 Old Italicﬨ ﬩ שׁ שׂ שּׁ שּׂ אַ - Alphabetic Presentation Forms ઈ ઉ ઊ - Gujarati அ ஆ இ - Tamil ޢ ޣ ޤ ޥ  - Thana ಆ ಇ ಈ - kannadaá, é, í, ó, ú, ü, ñ, ¿, ¡  - Spanish μg/ml  - Uniset1 ϢϰЃўӁ俯俯ȒÈð- Uniset2!@#$%^&U*I(O)_+}{"P:?OLPIKHJNGBFDEFRGTHYUJHGFDSAasdfghjkiujytgrsdcvfbghnmj
@@ -381,6 +388,7 @@ icr - single case alert or qualitative alerts
 aggregate or quantitative alert
 
 
+logs me 5:30 ghante less krke gmt time me dekhna hota hai
 
 
 
