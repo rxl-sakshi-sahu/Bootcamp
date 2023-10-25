@@ -6,4 +6,32 @@ Using
 3) Maven
 4) JDK
 
+5) POM - xml file that contains information about the project and configuration details used by Maven to build the project
+ 
+ --> Our company uses Redis cache
+ learn abt microservices, monolithic app etc - https://stackify.com/what-are-microservices/
+ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs
+ https://nikhilgupta1.medium.com/instagram-system-design-f62772649f90
+ 
+ 
+ 
+ What technology does Instagram use on the backend?   ....kinda questions (VS code, intelliJ, etc)
+ 
+ encodeHTML
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ *************************************	SYSTEM DESIGN		***********************************
+https://www.geeksforgeeks.org/database-sharding-a-system-design-concept/
+
+ 
+ 
+ 
 
