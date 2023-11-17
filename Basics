@@ -21,6 +21,29 @@ Using
  
  
  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ************************** JAVA ***********************
+ 
+ 
+ * Arrays.sort(nums);
+ * StringBuilder sb = new StringBuilder();  // creates modifiable string
+ * s.append()
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -31,7 +54,5 @@ Using
  *************************************	SYSTEM DESIGN		***********************************
 https://www.geeksforgeeks.org/database-sharding-a-system-design-concept/
 
- 
- 
  
 
