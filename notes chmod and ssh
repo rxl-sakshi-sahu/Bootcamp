@@ -524,6 +524,26 @@ tail -f file_name  //to see the current logs
 *************************************
 
 grails clean gradle
+****************************************
+
+For dictionary change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,47 @@
+
+*****************************   JAVASCRIPT    **********************************************
+
+
+GARBAGE COLLECTION
+
+Note-  the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.
+Garbage collection is performed automatically. We cannot force or prevent it.
+
+Basic garbage collection algorithm is called “mark-and-sweep”.(refer- https://javascript.info/garbage-collection)
+
+The following “garbage collection” steps are regularly performed:
+
+1) The garbage collector takes roots and “marks” (remembers) them.
+2) Then it visits and “marks” all references from them.
+3) Then it visits marked objects and marks their references. All visited objects are remembered, so as not to visit the same object twice in the future.
+4) …And so on until every reachable (from the roots) references are visited.
+5) All objects except marked ones are removed.
+
+***************************************************************************************
+
+DEEP AND SHALLOW COPY
+
+Object.assign - shallow (copies object's reference)
+structuredClone() - deep copy (don't affect original copy)
+
+*************************************
+Please note that methods sort, reverse and splice modify the array itself.
+
+--------------------------------------------------------------------------
+JS is single threaded and synchronous but....
+Asynchronous can be achieved by ajax calls, setTimeout
+
+jQuery has an option on Ajax calls to make them synchronously (with the async: false option).
+The reason it's problematic is that this option will block all JavaScript on the page until it finishes, including all event handlers and timers.
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
