@@ -360,6 +360,7 @@ ViewInstance.get(8088).columnSeq -where 8088 is viewInstanceId which differs for
 
 
 **************
+inside application.groovy which was application.yml - changes done (converted file to groovy)
 
 DB connection
 
@@ -529,7 +530,7 @@ grails clean gradle
 For dictionary change
 
 
-
+categories.feature.nonConfigured.enabled - edit category
 
 
 
