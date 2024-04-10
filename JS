@@ -38,6 +38,52 @@ The reason it's problematic is that this option will block all JavaScript on the
 
 
 
+						REACT (Library)
+						
+Higher Order Function - (Map, Reduce, Filter use in jsx)
+HOF are those where we can pass function as parameter, or pass function inside function or return function.
+
+Memory management-  agar scope/ closure se bahar gaya, koi object ne use point nhi kra hai to memory se kabhi bhi hat jaega kind of garbage collection.
+
+First class functions -
+
+
+DOM - html kyunki ek markup language h, initial design bna degi, par to change it dynamically we need third party, objects through which we can manipulate, here comes DOM
+Browser converts the markup language to object model.
+
+Hydration and Render- 
+Server side jo bhi page bnta hai(hydration) client side ko (render) bolte hain, basically hydration is used in server side rendering.
+render() - rendering the App component on the client side
+						
+Library vs framework - collection of libraries together forms framework
+
+*********************************
+
+React routing nhi kar skta, sirf rendering k kaam ata hai
+For that we use React Router
+
+*********************************
+
+React akele render krne k capable nhi h, as its just a framework for virtual DOM.
+
+VIRTUAL DOM, SHADOW DOM and ACTUAL DOM
+
+Shadow DOM - (dom inside dom) bahar koi style change ki to uska effect andar wale dom pe nhi hoga and vice versa
+
+Angular works on Actual DOM and React works on Virtual DOM. Both internally uses shadow DOM via CSS encapsulation.
+
+React DOM fills the gap between Virtual and Actual DOM in react , kyunki changes will reflect in virtual dom only by react.
+						
+Ek synthetic component se multiple synthetic component return nhi ho skte 
+
+Class based component  and Function based component
+
+						
+						
+
+
+
+
 
 
 
