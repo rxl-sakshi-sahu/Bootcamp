@@ -513,7 +513,7 @@ insert into pvusers_roles (role_id,user_id) values(489,664); //change role id fr
 
 *****************
 
-To see the logs of other env -
+To see the logs of other env - (siab)
 
 sudo ssh -i /home/lt-sakshis/Downloads/engineering_id_rsa.pem ec2-user@10.100.21.06
 ClinicalSafety100 - passphrase
@@ -528,12 +528,11 @@ grails clean gradle
 ****************************************
 
 For dictionary change
+build.gradle
+settings.gradle
 
 
 categories.feature.nonConfigured.enabled - edit category
-
-
-
 
 
 
