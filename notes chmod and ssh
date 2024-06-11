@@ -1,12 +1,4 @@
-8m3WtA6GCUbX7hr -password new 
 
-
-Nitesh - Intellij
-Bug/PVS-17705
-https://rxlogixdev.atlassian.net/browse/PVS-20917
-
-story/PVS-18626
-table not exist/ alert fail on proc shivam
 alter sequence EXEC_CONFIG_SEQUENCE increment by 35009;
 select EXEC_CONFIG_SEQUENCE.nextval from dual;
 alter sequence EXEC_CONFIG_SEQUENCE increment by 1;
@@ -534,6 +526,23 @@ settings.gradle
 
 categories.feature.nonConfigured.enabled - edit category
 
+*******************************
+
+Logic to server- Docker
+
+1)  sudo ssh -i /home/lt-sakshis/Downloads/engineering_id_rsa.pem ec2-user@10.100.21.06 
+(siab ki ip - 10.100.21.06)
+with passphrase ClinicalSafety100
+
+2) Inside sudo su -> go inside val-user folder
+cd ../val-user/
+
+3) docker ps -a -> (provides a list of the Docker containers on your machine.)
+4) docker inspect c34b197c7027 (container id)
+5) cd /home/val-user/apps
+6) ll -lrt
+7) cd .signal
+8) vi server.xml
 
 
 
@@ -541,6 +550,46 @@ categories.feature.nonConfigured.enabled - edit category
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------- revision icr ----------------------------------
+
+
+dictionary - me data pvr se ata hai, product groups pvr pe dependent rhte but baaki products pvs_mart se aata hai, pvs apne products khud bnata h
+
+save pe jis  hisab se schedule hoga, job tab run kr degi alert 
+save and run me run bhi hoga baaki scheduler se pick kr lega
+
+
+scheduledReportJob for SCA
+
+Workflow group, user group
+gtt - global temporary table
+
+global & product business rule
+
+
+
+
+-----------------------------
+Quantitative Reportjob
+
+--------------
+evdasDataUploadJob
+evdasCLLUploadJob - caseline listing
 
 
 
