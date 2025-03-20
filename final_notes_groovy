@@ -1,0 +1,110 @@
+Groovy notes
+
+Groovy is dynamically typed, object oriented ,supports metaprogramming
+
+
+Groovy advantage over Java
+
+* dynamic, no unnecessary code
+* Already has features which are yet to be seen in java itself like Closures.
+* Duck typing - If it walks like a duck, and talks like
+a duck, it must be a duck. In Groovy, If an object has properties and method
+similar to another object, the two objects must be of same type.
+Objects are polymorphic without being related by a common base class or
+interface.
+Allows for greater flexibility in polymorphism.
+* Optional Exception Handling
+* Groovy support operator overloading
+
+Closure 
+
+3.times { print 'hi ' }
+
+
+
+A multiline string is defined by using three double quotes or three single
+quotes.
+Multiline string support is very useful for creating templates or embedded
+documents (such as XML templates, HTML, and so on).
+def multiLineString = """
+......
+Hello,
+This is a multiline string
+"""
+
+a + b = a.plus(b)
+a - b = a.minus(b)
+a * b = a.multiply(b)
+a ** b = a.power(b)
+a / b = a.div(b)
+a % b = a.mod(b)
+
+
+
+split/ tokenize diff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Regression efforts ease
+
+
+how groovy program executes
+Method Prototype
+files
+
+
+
+Collections
+Introduction
+spock utc
+project
+
+
+
+
+
+
+cache
+application go through - overview
+
+
+The issue occurred due to grails version upgrade. The dispCount was coming null due to which it did not enter inside notification method.
+
+Hibernate uses a first-level cache (session-level cache) to manage entities.
+
+When we updated dispCount directly using SQL, Hibernate's cache was not aware of this update.
+
+When we later retrieved the object using Hibernate (get() or findById()), it fetched the entity from the cache instead of querying the database, causing dispCount to remain null.
+
+
+
+
+
+
+
+
+
+
+
+
+
