@@ -44,11 +44,205 @@ a % b = a.mod(b)
 split/ tokenize diff
 
 
+GORM
+GORM supports a number of powerful ways to query
+Dynamic Methods/Finders
+Where Queries
+Criteria Queries *
+Hibernate Query Language (HQL)
+
+List<Book> books = Book.list()   // select * from book
+List<Book> books = Book.list(offset:10, max:20)  // select * from book limit 10, 20
+List<Book> books = Book.list(sort:"title", order:”asc”)  // select * from book order by title
+List<Book> books = Book.getAll([23, 93, 81])  // select * from book where id in (23,93,81)
+List<Book> books=Book.getAll(1..4)  //select * from book where id in (1,2,3,4)
+
+the addTo method is a dynamic method that uses an association to automatically add instances to the association
+
+Author author = new Author(name:"Peter Ledbrook")
+Book book = new Book(title:"Grails in Action")
+author.addToBooks(book).save()
+
+Author author = Author.findByName("Stephen King")
+Book book = author.books.find { it.title == 'The Stand' }
+author.removeFromBooks(book)
+
+
+.validate()
+Use getErrors() method on object to check why validation failed
+book.errors
+
+
+Book book = Book.findByTitleLike("Harry Pot%")
+Book book = Book.findByReleaseDateBetween(firstDate, secondDate)
+- “select * from book where release_date_between > firstDate && release_date_between < secondDate”
+Book book = Book.findByTitleLikeOrReleaseDateLessThan("%Something%",
+someDate)
+
+Book book = Book.findOrCreateByTitle("The Stand")
+Book book = Book.findOrCreateByTitleAndPrice(“The Stand”,200)
+Book book = Book.findOrSaveByTitle("The Stand")
+Book book = Book.findOrSaveByTitleAndPrice(“The Stand”,200)
+
+dynamic finder looks like a static method invocation.
+ These methods don't actually exist in any form at the code level.
+ Generated at runtime, based on the properties of a given class.
+These are findBy, findAllBy, findOrCreateBy and findOrSaveBy methods
+findBy returns first instance of the result whereas findAll returns all
+instances of the result
+
+The same pagination and sorting parameters available on the list method can also be used with dynamic finders.
+By supplying a map as the final parameter:
+def books = Book.findAllByTitleLike("Harry Pot%",
+[max: 3, offset: 2, sort: "title", order: "desc"])
+
+CountBy uses the properties of the domain class,and gives count of the number of records returned
+
+• Integer count = Book.countByReleaseDateBetween(firstDate, new Date())
+• Integer count = Book.countByTitleLike("%Hobbit%")
+• Integer count = Book.countByReleaseDateIsNotNull()
+
+Count() - 
+Counts the number of instances in the database and returns the result
+Integer noOfBooks = Book.count()
+
+Book.findWhere(price:200,
+Book.findOrSaveWhere(author:author,
+
+----------------------------------------
+
+OR another way -use criteria
+
+Person.withCriteria{
+//some conditions....
+}
+Person.createCriteria().list{
+//some conditions....
+}
+
+By default the criteria returns a list of objects. In above examples we will get list of Person objects.
+
+Four methods can be invoked in createCriteria
+get: locates a unique instance for the query (It will throw exception if your criteria do not give a unique result)
+list: returns the list of instances for the query. (It can give repetative results in case of querying on associations)
+listDistinct:to get the distinct result from the query.
+count:returns totalResults as integer
+
+between-: between("balance", 500, 1000) – value in range
+• eq -: eq("name", "Parveen") – value is equal
+• eqProperty -: eqProperty("firstName","lastName") – two props. are same
+• gt -: gt("balance",1000) – greater than
+• gtProperty -: gtProperty("balance","overdraft") – one prop gt other
+• ge -: ge("balance",1000) – greater than equal
+• geProperty -: geProperty("balance","overdraft") - one prop gte other
+• idEq -: idEq(1) – object id equal
+• ilike -: ilike("firstName","Steph%") – case insensitive like search
+• In -: 'in'("accounts",[account1,account2]) – value in given set
+or null
+InList -: inList("transactions",[transaction1,transaction2])//list should not be
+empty or null. You can use either inList or 'in'
+Like what we used to write in sql statement as where condition:
+• isEmpty -: isEmpty("accounts") – if prop. is empty
+• isNotEmpty -: isNotEmpty("accounts) – if prop. is not empty
+• isNull -: isNull("balance") - if prop. is null
+• isNotNull -: isNotNull("balance") - if prop. is not null
+• lt-: lt("balance",1000) – less than
+• ltProperty -: leProperty("balance","overdraft") – less than other prop.
+• le -: le("balance",1000) – less than equal
+• leProperty -: leProperty("balance","overdraft") – less than equal to other prop.
+• like -: like("firstName","Steph%") – case sensitive like search
+• ne -: ne("name", "London") – not equal to
+• neProperty -: neProperty("firstName","lastName") – not equal to other prop.
+• order -: order("firstLastName", "desc") – order by
+sizeEq -: sizeEq("transactions", 10)
+
+List<Account> accounts = Account.createCriteria().list {
+and {   // same with or,not
+between("balance", 5000, 10000)
+'branch' {
+eq("name", "London")
+}}
+}
+
+property -: Returns the given property in the returned results
+distinct -: distinct("lastName") or distinct(['firstName','lastName'])
+avg -: avg("age")
+count -: count("branch")
+countDistinct -: countDistinct("branch")
+groupProperty -: groupProperty("lastName")
+max -: max("age")
+min -: min(“age”)
+sum -: sum("balance")
+rowCount -: rowCount()
+
+
+List<String> firstNames = User.createCriteria().list {
+projections{
+property("firstName")
+}
+ilike("firstName", "Test%")
+le("age", 50)
+between("age", 18, 60)
+}
+The above example will return list of firstNames of users.
+
+
+ist<Integer> userAges = User.createCriteria().list {
+projections {
+distinct("age")
+}
+ilike("firstName", "Test%")
+le("age", 50)
+between("age", 18, 60)
+}
+The above example will return list of distinct ages of users.
+
+
+Integer ageSum = User.createCriteria().get {
+projections {
+sum("age")
+}
+ilike("firstName", "Test%")
+le("age", 50)
+between("age", 18, 60)
+}
+The above example will return sum of age, same with Criteria example (count, min, max, avg, sum & rowCount)
+
+HQL - executeQuery, executeUpdate
+
+This method is used to select fields of a domain class rather than fetching the whole object
+
+List usersInfo = User.executeQuery("select firstName, lastName from User where age>:age ", [age:18])
+• The above query will return list of list which have only firstName and lastName of User rather than the object.
+
+This method is used when you want to delete or updating the objects directly without loading them.
+User.executeUpdate("update User set firstName=:firstName where id=:id",[firstName:"Test User",id:1.toLong()])
+
+The above example will update the user which have id 1. The same thing can be executed by loading the object by get method and then updating its firstName , which will cause 2 query to database one for get and one for updation.
+Same way for deletion rather than calling get and then delete the object, we can delete the object directly in one query.
+User.executeUpdate("delete User where id=:id",[id: 1.toLong() ])
+
+NamedQueries are static closure properties of domain class which is used as resuable criteria closure
+class Account {
+Integer balance = 0
+Date dateCreated
+static namedQueries = {
+recentTransactions {
+Date now = new Date()
+gt 'dateCreated', now - 365
+}}}
+
+Now you can query it like
+Account.recentTransactions().list()
+Account.recentCustomers().list(max:5,offset:0)
+Account.recentCustomers().findAllByBalanceGreaterThan(500)
+It gives you the liberty to reuse the conditions and criteria of selection
 
 
 
 
-
+Persistent Fields – Core to business - store in database
+• Transient Fields – usage but no persistent
 
 
 
@@ -97,6 +291,15 @@ When we updated dispCount directly using SQL, Hibernate's cache was not aware of
 When we later retrieved the object using Hibernate (get() or findById()), it fetched the entity from the cache instead of querying the database, causing dispCount to remain null.
 
 
+Link Sharing App (Java)
+
+•Developed a LinkSharing application using Java, Groovy, and Grails for users to share links or documents within groups. Features include user authentication, topic creation (public/private), subscriptions, and invitations.
+•Utilized Spock framework for testing and validating- Performed unit testing using Spock framework to ensure robust and reliable code, utilizing its specification-based approach for clear and expressive test cases.
+
+Customizable Feedback Form Platform
+
+•Developed a SurveyMonkey-like platform that enables authenticated users to create customizable feedback forms, share them via unique links, and analyze collected responses.
+•Built using React, Java, Groovy, and PostgreSQL, with a focus on dynamic form building, secure authentication, and insightful analytics.
 
 
 
