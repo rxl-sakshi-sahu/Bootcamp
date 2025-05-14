@@ -136,6 +136,58 @@ Business usecase- Least recently used element hum easily remove kr paenge, if we
 
 
 
+
+
+
+
+Thread  - smallest unit of execution within a process
+multitasking- allows OS to run multiple process simultaneously 
+Multithreading - ability to execute multiple threads within a single process
+
+Threads and processes are managed by time slicing and context switching( process of saving the state of currently running process and loading the state of next one to be executed)
+
+When Java program starts, one threads starts running immediately,which is called main thread. This thread is responsible for executing main thread
+
+
+How to create thread -
+Thread class ko extend krke or Runnable interface implement krke
+
+// Extend thread class - override run method, call start method to intiate new thread
+
+public class World extend Thread{
+	@Override
+		public void run()
+}
+
+
+main(){
+	World world = new World()
+	Thread th = new Thread(world);
+	th.start();
+}
+
+
+// Multi threading
+
+jis part me shared resource ko access ya modify kr rhe ho- critical section
+Synchronized word ko use krke race condition (jab multiple threads ek time par hi same resource ko access kr rhi ho) ko prevent kr skte hain
+
+This is so called locking.
+2 types- Intrinsic and explicit
+
+Explicit- 
+
+private final Lock lock = new ReentrantLock();
+lock.tryLock() - will return true only if it is free
+unlock() in finally
+
+
+
+
+
+
+
+
  Springboot - The extension of the larger Spring Framework, designed to simplify the development process by providing a streamlined way to configure and deploy applications. 
  
  Inversion of Control is a design principle where the control of object creation and dependency management is shifted (inverted) from the application code to the framework (like Spring).
@@ -164,7 +216,6 @@ public class User {
     private Long id;
     private String name;
 }
-
 
 
 
