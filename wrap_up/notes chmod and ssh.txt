@@ -1,0 +1,738 @@
+
+alter sequence EXEC_CONFIG_SEQUENCE increment by 35009;
+select EXEC_CONFIG_SEQUENCE.nextval from dual;
+alter sequence EXEC_CONFIG_SEQUENCE increment by 1;
+select EXEC_CONFIG_SEQUENCE.nextval from dual;
+
+
+ALTER USER pvs quota unlimited on USERS;
+
+
+aws s3 cp s3://eng.rxlogix.com/Releases/PV_Suite_Installer/6.0/PV_Suite_Installer_6.0.zip .
+
+update pvs_quant_routines
+set hide = 1 where quant_routine_name like '%Ebgm'
+
+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 - AUDIT_LOG _ PERSONAL ACCESS TOKEN GITHUB
+
+
+git branch -m <oldname> <newname>                            //rename branch
+sudo openvpn --config engineering_vpn_isha.sharma@rxlogix.com_eng.ovpn
+        -----------pritunl vpn for internal env
+sudo openvpn --config client_vpn_Isha.Sharma@rxlogix.com_vpn.ovpn             -------------------client vpn
+
+
+chmod +x VNC-Viewer-6.20.113-Linux-x64     //make file executible
+
+
+ git add .
+ git commit -m "login functionality added"
+ git push -u origin evdasautodownload_login
+
+signalManagement.linkedConfigurations.enabled --- linked configurations
+
+config.signal.boot.status = true
+
+ctx.productAssignmentService.dum()
+
+OR
+ViewInstanceService viewInstanceService= ctx.getBean('viewInstanceService') //grails console service
+http://10.100.22.64:8080/reports/login/auth //reports-url
+
+git stash 
+git stash pop
+
+Cd /home/ec2-user/Logs
+tail -f Docker_Logs.log
+
+
+
+	ssh -i ~/Downloads/engineering_id_rsa  ec2-user@10.100.22.105
+passphrase - ClinicalSafety100
+sudo su
+rm -rf signal* ==== deploy krne se pehle
+ps -eaf | grep tomcat
+/root/pvsignal/.signal
+cd /usr/share/tomcat9/apache-tomcat-9.0.2/
+cd /home/reports/apache-tomcat-9.0.2/
+sh bin/startup.sh
+
+kill -9 10820
+sudo scp -r /home/pvr-user/PVD_UI_50 . (from another user to currect directory , same server)
+	scp  -i ~/Downloads/engineering_id_rsa  signal1.war ec2-user@10.100.22.246:~
+
+ mv /ec2-user/signal1.war /isha-sharma/tomcat/webapps/signal.war   move
+
+
+mv webapps tomcat ---rename webapps to tomcat
+
+# find /home -name tecmint.txt    ----find file by name under home directory
+
+isha-sharma || isha100 passwd 
+
+chmod 600 ~/Downloads/engineering_id_rsa 
+
+tail -100f catalina.out .....
+
+fuser -k -n tcp 7070
+sudo chown ec2-user:ec2-user PV_SIGNAL
+
+
+
+password encode decode ::
+
+com.rxlogix.RxCodec.encode('pvs')
+com.rxlogix.RxCodec.decode('encryptedformofpassowrd')
+
+eg-  com.rxlogix.RxCodec.decode('9nczNincKB4+bk0wWFqVfQ==')
+
+CREATE USER pvs IDENTIFIED BY pvs DEFAULT TABLESPACE USERS QUOTA 250M ON USERS;
+GRANT CONNECT, CREATE TABLE, CREATE SESSION, RESOURCE TO pvs;
+commit;
+
+
+gradle build jacocoTestReport                   ( --cmd  for coverage report generation)
+
+grails test-app com.rxlogix.ReportControllerSpec --unit
+
+ lsof -t -i:8080
+sudo lsof -i -P -n | grep LISTEN.
+
+$ grails run-app --port=8090
+
+sudo find * / | grep snap | grep intellij-idea
+
+
+INTELLIJ
+
+rm ~/.config/JetBrains/IntelliJIdea2021.1/eval/idea211.evaluation.key && \sed -i '/evlsprt/d' ~/.config/JetBrains/IntelliJIdea*/options/other.xml && \rm -rf ~/.java/.userPrefs/jetbrains
+
+
+
+
+delete all in database
+DECLARE
+Begin
+ for c in (select table_name from user_tables) loop
+   execute immediate 'drop table '||c.table_name||' cascade constraints';
+ end loop;
+ commit;
+End;
+
+ 
+
+DECLARE
+Begin
+ for c in (select sequence_name from user_sequences) loop
+   execute immediate 'drop sequence '||c.sequence_name||'';
+ end loop;
+ commit;
+End;
+
+
+//tablename, rows from user_tables
+SELECT TABLE_NAME,
+TO_NUMBER(EXTRACTVALUE(XMLTYPE(DBMS_XMLGEN.GETXML('SELECT COUNT(*) CNT FROM '||TABLE_NAME)),'/ROWSET/ROW/CNT')) AS COUNT
+FROM USER_TABLES
+
+
+RCA
+
+Root Cause: As FAERS cases do not have followup numbers, the case number displayed null in the respective brackets for followup. This issue occured as the handling for followup number as null was done incorrectly for case number population.
+Corrective Action: N/A
+Permanent Fix: Handled case number population for followup number with null value .
+Impact Assessment: N/A
+Preventive Action : N/A
+
+	UPDATE DATABASECHANGELOG SET md5sum = '7:26a9ca5373e66399d9e45ae8885d41ab' where md5sum = '7:3582b17c69ec1fdb96a4f554ff36f3d5'
+
+UPDATE DATABASECHANGELOGLOCK SET LOCKED=0, LOCKGRANTED=null, LOCKEDBY=null where ID=1; //stuck changelock
+commit;
+
+
+
+
+include file: '2021-07-06-Primary_susp_pai_new_column.groovy'
+    include file: '2021-07-09-all-pt-field-added.groovy'
+    include file: '2021-07-23-add-config-nodename-column.groovy'
+
+DATASOURCE console pe chalane ke liye
+import com.rxlogix.util.*
+import groovy.sql.Sql
+def dataSource = ctx.dataSource_vaers
+Sql vaersSql = new Sql(dataSource)
+String vaersDate = ""
+String vaers_statement = SignalQueryHelper.vaers_date_range()
+ vaersSql.eachRow(vaers_statement, []) { resultSetObj ->
+                vaersDate = resultSetObj
+            }
+vaersDate
+
+
+console se aocolumns, then fetch view -- datatable issue
+
+
+	//username = 'PVS_DB_PVS_462'
+			//username = 'PVS_DB_QA_22_APR'
+			//username = 'PVS_APP_DEV4'
+			//username = 'PVS_APP_QA2'
+			//username = 'PVS_DB_APP_SG'			
+			//username = 'PVS_DB_46_DEV'
+			//username = 'PVS_APP_45_30AUG'
+			//username = 'PVS_APP_DEV4'
+			//username = 'PVS_DB_APP_SG'
+
+                   
+
+
+{"startDateTime":"2022-04-25T07:15+05:30","timeZone":{"name":"Asia/Kolkata","offset":"+05:30"},"recurrencePattern":"FREQ=HOURLY;INTERVAL=1;COUNT=2"}
+
+
+
+BULK ADD CONFIGURATION ::::
+import com.rxlogix.*
+def name = "ICR"
+for(int i =0 ; i < 350; i++){
+Configuration configurationInstance = new Configuration(name: name+i,type: Constants.AlertConfigType.SINGLE_CASE_ALERT, isEnabled: true,isDeleted: false, excludeFollowUp: true, selectedDatasource:"vaers", owner:ctx.userService.getUser(), assignedTo:ctx.userService.getUser(),priority: Priority.first()
+ ,modifiedBy:'Signal Dev',createdBy:'Signal Dev', productSelection: 'Test Product AJ Capsule 100 millimole')
+configurationInstance.save(flush:true)
+    
+}
+
+
+
+
+
+
+//Configuration.get(5).selectedDataSheet
+//import grails.converters.JSON
+//
+//def dataSheetsMap = JSON.parse('{"11":{"100001":"Core(Test Product Family AJ)"}}')
+//def insertStatement =''
+//dataSheetsMap.each { key, value ->
+//    value.each{ k,v->
+//         insertStatement += "INSERT INTO GTT_PVS_DS_INPUT_DATA (Bind_Id,Datasheet_Id, Datasheet_Name, Execution_Id) VALUES ('${key}','${k}','${v}', '5');"
+//    }
+//                }
+//
+
+
+
+
+spotfire {
+    server = "10.100.21.145"
+    port = 8443
+    path = "spotfire/wp/render/buepUJTHvHSVsuvd_R/analysis?file="
+    callbackUrl = "https://10.100.21.83:8445/signal/spotfire/rx_validate"
+    domainName = "rxlogix.com"
+    version = "7.11"
+    filename = "pvreports_template.html"
+    analysisRoot = "Development/6.0/PVA Code/Report Templates"
+    token_secret = "rxlogix"
+    defaultEmail = "pvreports@rxlogix.com"
+    vaccPath = "Vaccine Template"
+    drugPath = "Drug Template"
+    emailTitle = "Send Email"
+    wsdl_location = "http://10.100.6.44:80/SpotFireAutomation/JobExecutor.asmx?WSDL"
+    fileNameLimit = 200
+    fileNameCachedPeriod = 3600
+    protocol = "http"
+    keepAlive.interval = 30000
+    secureAccess = true
+    automationUsername = "spotfireadmin1141"
+    automationPassword= "oracle123"
+    session_interval = 7200
+    session_monitor_frequency = 20
+    automationServer = "10.100.21.145"
+    automationPort = 8443
+    automationProtocol = 'http'
+    libraryRoot = 'Development/6.0/PVA Reports 60'
+    libraryFolder = 'PVA Reports'
+    emailSubject = 'Signal Reports'
+    automationNTLM =false
+    faersAnalysisRoot = '/Development 5.5/Faers/PVA Code/Report Templates'
+    operationalReport.name='Signal Operational Report'
+    operationalReport.url='/Development 5.5/Signal_operational/Reports/Signal Operational Report'
+    riskSummaryReport.name='Signal Operational Report Risk Screen'
+    riskSummaryReport.url='/Development 5.4.2/Risk_Screen/Reports/Signal Operational Report Risk Screen'
+    productivityAndComplianceReport.url='Signal_54/ProductivityAndCompliance/Reports/Productivity and Compliance'
+    productivityAndComplianceReport.name='Productivity and Compliance'
+    operationalReport.hidingOptions=true
+    riskSummaryReport.hidingOptions=true
+    dataAnalysis.hidingOptions =true
+    fileBasedReportGen =false
+    fileFolder=''
+    symptoms_comanifestation = false
+}
+//insertStatement
+
+
+server xml ssl=false 
+
+https->http in config
+
+
+config.dueInStart.enabled
+config.dueInStartPoint.field
+config.pvsignal.showAutoGeneratedHistory
+
+
+config.signal.evdas.enabled
+
+GIT PULL ISSUE
+ssh-keygen -R github.com
+curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+
+*********************************************************************************************************
+
+Work done - DS ( Design Specification),DB guide, Bugs fixing, Story contribution (with Shivam ,Isha, and Amrendra sir),
+Regression testing, Test Doc (Use cases), added configurations to app_config file.
+47979, 47978,47980 - documentation
+
+
+PVS-6124 - export enhancement (Criteria sheet)
+PVS-39929 - Case Narrative export
+PVS-47979 - GDPR error management
+
+
+Debugging skills - 
+{
+	ctrl + G = line number
+	ctrl + shift + N = search file
+	ctrl + shift + F = search word specific in all files
+	clt+alt+ I  -indentation
+
+	- add comments
+	- to find which js files are used for a particular page, go to its page source
+	- to check ajax call, go to inspect, inside network, fetch XHR
+	- see the headers and network call (check kro call ja bhi rhi ya nhi us function pe)
+	- add a debugger
+	- dont forget to format the code after making changes
+	- try to avoid hardcode
+	- analyze impacts after doing changes, dont make changes in common file
+	-go and check whether things are actually getting saved in DB 
+	- practice running console as much as you can
+	- try to understand the flow and the functionality of whatever bug you are solving
+
+}
+
+* config.pvsignal.multiple.datasource = true  (enable datasources options)
+*  escapeHTML(encodeToHTML(row.name)) - refer to bug 46679
+ - stops data from overflowing and escape characters like " if string getting break on this
+ 
+
+
+SANITY
+
+******************
+
+injected phase- enhancement/ product bug- requirement , legacy- development
+
+Important!
+
+Quick Note for JIRA Bugs Mandatory fields :
+
+Preventive Actions || RCA || Corrective Action
+Impact Analysis || Application Design Impact
+DB Impact || Screenshots || DevTested Label
+Right side menu : 
+Injected Phase || Dev Root Cause
+Earliest Detection Phase || Introduced by Developer(If product Bug)
+
+***************
+
+FOR LOGS
+
+***********
+
+In console
+ctx.viewInstanceService.updateAllViewInstances() - basically service name and then function to execute
+ViewInstance.get(8088).columnSeq -where 8088 is viewInstanceId which differs for all (see from Headers)
+
+
+
+**************
+inside application.groovy which was application.yml - changes done (converted file to groovy)
+
+DB connection
+
+After downloading virtual box and importing image(the .ova file)- 
+run oracle-db in virtual box
+write the following commands in terminal of virtual box 
+sqlplus sys/oracle@localhost:1521/orcl as sysdba
+create USER linksharing IDENTIFIED BY linksharing DEFAULT TABLESPACE USERS QUOTA 250M ON USERS;
+GRANT CONNECT, CREATE TABLE, CREATE SESSION, RESOURCE, DBA TO linksharing;
+
+
+UPDATE DATABASECHANGELOGLOCK SET LOCKED=0, LOCKGRANTED=null, LOCKEDBY=null where ID=1;
+for connection of db first time, make seeding true, change the change lock by above command
+
+*********************
+
+https://docs.fortinet.com/document/forticlient/7.2.0/linux-release-notes/213138/install-forticlient-linux-from-repo-fortinet-com%20star%201%20Install%20FortiClient%20(Linux)%20from%20repo.fortinet.com%20%7C%20(Linux)%20Release%20Notes
+
+
+FORTICLIENT
+
+ $ sudo apt autoremove forticlient
+ 
+ https://docs.fortinet.com/document/forticlient/7.2.0/linux-release-notes/213138/install-forticlient-linux-from-repo-fortinet-com
+
+**********************
+special characters - 
+是. 不. 了. 人. 我. 在. 有. 他. 这. 为. 之. 大. 来. 以. 个. 中. 上. 们 - Chinese 平仮名, ひらがな 片仮名, かたかな 漢字, かんじ - Japaense  ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ korean 𐐀 𐐁 𐐂 Old Italicﬨ ﬩ שׁ שׂ שּׁ שּׂ אַ - Alphabetic Presentation Forms ઈ ઉ ઊ - Gujarati அ ஆ இ - Tamil ޢ ޣ ޤ ޥ  - Thana ಆ ಇ ಈ - kannadaá, é, í, ó, ú, ü, ñ, ¿, ¡  - Spanish μg/ml  - Uniset1 ϢϰЃўӁ俯俯ȒÈð- Uniset2!@#$%^&U*I(O)_+}{"P:?OLPIKHJNGBFDEFRGTHYUJHGFDSAasdfghjkiujytgrsdcvfbghnmj
+
+
+******************
+for disposition...  settings -> workflow rule -> edit any or create new one -> change incoming disposition ( after opening alert check disposition from top right three lines) , also go to user management from settings and check if groups below have any of them.
+
+
+fears, vears, eudra ---- for data seeding, in application.groovy
+icr - single case alert or qualitative alerts
+aggregate or quantitative alert
+
+
+logs me 5:30 ghante less krke gmt time me dekhna hota hai
+col-height word-break,   word-wrap-break-word
+
+
+****************
+
+have changed signal message from ValidatedSignal controller and getting this error - should restart whenever change something like tht to refresh
+->
+
+groovy.lang.MissingMethodException: No signature of method: com.rxlogix.signal.ValidatedSignal.getReferences() is applicable for argument types: () values: []
+        at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:71)
+        at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:49)
+        at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+        at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callSafe(AbstractCallSite.java:83)
+        at com.rxlogix.ValidatedSignalService.$tt__fetchAttachments(ValidatedSignalService.groovy:5368)
+     
+************************
+https://pvi-sso.rxlogix.com/auth/realms/master/login-actions/authenticate?client_id=NON-SIAB-BQA-60&tab_id=MgzrjFDIGvw
+
+
+for scrollbar 
+"max-height: 250px; Overflow-y: auto;"
+
+hazelcast.server.instance.name  - ip address flag
+
+
+config.app.dictionary.base.url - product dictionay k liye
+Holders.config.enable.show.dob - show dob
+
+for pixel change - add class pvi-col-md for giving fix width and all, its defined in css as below(regarding ticket 52997)
+.pvi-col-md{
+  width: 150px !important;
+  min-width: 150px !important;
+}
+
+col min, col max same
+
+https://getbootstrap.com/docs/4.0/layout/grid/
+
+
+********************************
+CUSTOM VALIDATION
+
+com.rxlogix.signal.ReportHistory.reportName.nullable = Report name is required
+com.rxlogix.signal.ReportHistory.reportName.unique=The Report Name is already in use, please use a different name
+com.rxlogix.signal.ReportHistory.productName.nullable = Products are required
+
+
+In above code, we can see that com.rxlogix.signal.groovyFile.property.constraint  --->  groovy automatically picks these messages from messages.properties based on the constraints given in groovy file.
+
+********************************
+
+filter- project = "PV Signal" AND issuetype = Bug AND fixVersion = 6.1 AND duedate in ("2023/11/15", "2023/11/22") AND status in (Open, "Development in Progress", "Code Rejected")  ORDER BY status ASC, assignee ASC
+
+
+INSERT INTO PVUSERS_ROLES (role_id,user_id)
+
+VALUES (704,932);
+ 
+select * from PVUSER_WEBAPP
+
+*******************************************
+
+<input type="checkbox" id="foregroundQuery" />
+<input type="checkbox" id="selectedDatasheet" />
+<input type="hidden" id="prevForegroundQueryState" />
+<input type="hidden" id="prevSelectedDatasheetState" />
+<input type="text" id="dataMiningVariableValue" />
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Set initial state
+        updateCheckboxStates();
+
+        // Listen for changes in the dataMiningVariableValue
+        $("#dataMiningVariableValue").on("change", function () {
+            updateCheckboxStates();
+        });
+
+        function updateCheckboxStates() {
+            var dataMiningVariableValue = $("#dataMiningVariableValue").val();
+
+            // Get the previous states from hidden fields
+            var prevForegroundQueryState = $("#prevForegroundQueryState").val();
+            var prevSelectedDatasheetState = $("#prevSelectedDatasheetState").val();
+
+            // Check if #dataMiningVariableValue is null or empty
+            if (dataMiningVariableValue == null || dataMiningVariableValue.trim() === "") {
+                // Restore the previous state of the checkboxes
+                $("#foregroundQuery").prop("checked", prevForegroundQueryState === "true");
+                $("#selectedDatasheet").prop("checked", prevSelectedDatasheetState === "true");
+            } else {
+                // Update the hidden fields with the current checkbox states
+                $("#prevForegroundQueryState").val($("#foregroundQuery").prop("checked"));
+                $("#prevSelectedDatasheetState").val($("#selectedDatasheet").prop("checked"));
+            }
+        }
+    });
+</script>
+
+************************
+
+once  you get dev role, only then you will be able to access console
+To get the dev role - 
+Run the following commands in DB
+select * from pvuser;
+select * from role;
+select * from pvusers_roles;
+insert into pvusers_roles (role_id,user_id) values(489,664); //change role id from role and userid from pvuser table respectively
+
+*****************
+
+To see the logs of other env - (siab)
+
+sudo ssh -i /home/lt-sakshis/Downloads/engineering_id_rsa.pem ec2-user@10.100.21.06
+ClinicalSafety100 - passphrase
+sudo su
+cd ../val-user/apps/.signal
+ll -lrt
+tail -f file_name  //to see the current logs
+
+*************************************
+
+grails clean gradle
+****************************************
+
+For dictionary change
+build.gradle
+settings.gradle
+
+
+categories.feature.nonConfigured.enabled - edit category
+
+*******************************
+
+Logic to server- Docker
+
+1)  // sudo ssh -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem ec2-user@10.100.21.06 
+sudo ssh -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem ubuntu@10.100.21.28
+(siab ki ip - 10.100.21.06)
+with passphrase ClinicalSafety100
+
+2) Inside sudo su -> go inside val-user folder
+cd ../val-user/
+
+3) docker ps -a -> (provides a list of the Docker containers on your machine.)
+4) docker inspect c34b197c7027 (container id)
+5) cd /home/val-user/apps
+6) ll -lrt
+7) cd .signal
+8) vi server.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------- revision icr ----------------------------------
+
+
+dictionary - me data pvr se ata hai, product groups pvr pe dependent rhte but baaki products pvs_mart se aata hai, pvs apne products khud bnata h
+
+save pe jis  hisab se schedule hoga, job tab run kr degi alert 
+save and run me run bhi hoga baaki scheduler se pick kr lega
+
+
+scheduledReportJob for SCA
+
+Workflow group, user group
+gtt - global temporary table
+
+global & product business rule
+
+
+
+
+-----------------------------
+Quantitative Reportjob
+
+--------------
+evdasDataUploadJob
+evdasCLLUploadJob - caseline listing
+
+-----------------------------
+
+
+
+docker systemctl start docker
+docker ps -a
+docker ps (running)
+docker start container_id   OR    docker restart container_id   - exit k baad firse start
+docker stop container_id
+docker images 
+
+
+--------------------------- DOCKER CREATE ------------------------
+DockerFile me saare configurations...port, 
+consist of 8 commands mainly 
+
+FROM tomcat (base img used)   -----top pe
+RUN 
+EXPOSE port 
+COPY 
+ENV (environ variable)
+WORKDIR (default)
+CMD catalina.sh  (running command of base image)     ---end me
+
+--------------------------------------------------------------------------
+
+docker build -t img_name .            //now docker image command 
+daemon (background  running process)
+
+
+========================
+
+arg-dev
+
+sudo ssh -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem ec2-user@10.100.22.201
+sudo ssh -i engineering_id_rsa ubuntu@10.100.21.28
+
+
+env up -
+sudo su
+cd /pv-suite-efs-2/tomcat9/apache-tomcat-9.0.2/webapps
+sudo ./../bin/startup.sh
+sudo tail -f ../logs/catalina.out
+
+======================  
+server login
+
+sudo ssh -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem ec2-user@10.100.22.201
+ps -ef|grep tomcat
+cd /home/ec2-user/tomcat_70/apache-tomcat-9.0.2/logs
+ll -lrt
+sudo su
+tail -500f catalina.out
+
+
+/// for docker logs- 
+docker ps -a
+docker logs -f pvs --tail 10  // where pvs- image
+or 
+docker logs -f --tail 500 a019bb6c164e // with container id
+
+*************
+
+ sudo su - val-user  (changing user)
+ cd /home/val-user/apps/.signal
+ ls
+
+
+***************
+
+non-siab 
+
+sudo ssh -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem ec2-user@10.100.17.57
+docker ps -a
+docker logs -f --tail 200 1fbcfe5e6c51
+
+************
+
+
+
+sudo ssh -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem ec2-user@10.100.21.217
+sudo su - val-user
+cd apps/.signal
+sudo su
+
+
+[val-user@ip-10-100-21-217 apps]$ ll -lart
+
+--------------------------fatal error--------------
+
+SELECT pid, usename, application_name, client_addr, backend_start, state
+FROM pg_stat_activity
+WHERE state = 'idle';
+
+ 
+SELECT pg_terminate_backend(pid)
+FROM pg_stat_activity
+WHERE state = 'idle';
+
+----------------------------------
+JDK: A comprehensive package for Java development (including JRE and tools for compiling and debugging).
+JRE: Provides the environment to run Java applications (includes the JVM and standard libraries).
+JVM: The engine that executes Java bytecode on the system, part of the JRE.
+In short, the JDK is for developers to create Java applications, the JRE is for running Java applications, and the JVM is the core component that actually executes the Java code.
+
+
+
+
+
+
+
+*********************************** DEPLOY ***************************************
+
+sudo scp -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem /home/lt-sakshi/pvsignal/build/libs/signal.war ubuntu@10.100.21.28:/pv-suite-efs-2/apache-tomcat-9.0.50/webapps
+
+
+-------------------------------------
+
+/home/lt-sakshi/pvsignal/build/libs/signal.war
+
+sudo scp -i /home/lt-sakshi/Downloads/engineering_id_rsa.pem /home/lt-sakshi/pvsignal/build/libs/signal.war ec2-user@10.100.22.201:/home/ec2-user/tomcat_70/apache-tomcat-9.0.2/webapps
+
+
+
+gradlew war or gradle clean war
+
+ps -ef | grep tomcat
+sudo kill -9 3425
+cd tomcat_70/apache-tomcat-9.0.2/webapps
+ll
+rm -rf signal.war
+
+ll
+cd ../bin
+sudo ./startup.sh
+
+
+
+webapps me jaake signal, signal.war delete krdo with rm -rf command,
+then current running process kill krdo
+ab next tab me jaake 
+
+ 
+
