@@ -1,0 +1,80 @@
+server, servlet
+dependency injection, ioc (initiate the instance of controller alomng with its dependencies)
+
+@Component, @Autowired (no new user is getting created, we are able to mock it)
+@RequestMapping
+
+
+
+
+
+
+
+SB advantages- dependency management, Auto configuration, embedded server (we dont have to build a war and deploy it to tomcat servlet container)
+
+pom.xml - for dependency
+
+jar vs war
+
+ controllers hold the endpoint
+ DTO - RequestDTO, ResponseDTO
+ utility - helper  methods that are generally common among more than one classes
+ 
+ Enitity - POJO
+ 
+ 
+ ANNOTATIONS- 
+ RestController = Controller + ResponseBody
+ 
+ if we wouldn't include @REsponseBody above the controller, then whatever string we are returning,sb will consier the name of the view
+ 
+ @RequestMapping - does mapping of api
+ @RequestParam = used to bind ,request parameter to controller method parameter
+ @InitBinder - for each method whenever any api get invoked, first run this binder, to see if any of the method binder requires some preprocessing
+ @PathVariable - used to extract values from path of url and help to bind it to controller method parameter
+ @GetMapping (path ="/fetchUser/{firstName})
+ 
+ @RequestBody - bind body of http request to controller method parameter (java object)
+ 
+ ResponseEntity - represents entire http response (header, status, responsebody)
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bean - Java object which is managed by spring container (also known as ioc container)
+IOC container - contains all beans which get created  and also manage them
+
+How to create bean - @Component, @Bean
+
+
+
+
+
+
+
+
+Prototype pattern - solve problem where on cloning the object if any variable or field will be private, we wont be able to set it to the cloned obj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
