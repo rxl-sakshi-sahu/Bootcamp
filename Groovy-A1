@@ -1,0 +1,109 @@
+Q.1)
+Sol- 
+class Person
+{
+    public String name, gender,address;
+    public Integer age;
+    public String getName()
+    {
+    return this.name;
+   }
+    public void setName(String name)
+    {
+      this.name= name;
+    }
+    
+    Person(String name,String gender,String address,Integer age)
+    {
+      this.name= name;
+      this.age= age;
+      this.gender= gender;
+      this.address= address;
+    }
+   
+public static void main(String[] args){
+Person p = new Person("Sakshi","female","Delhi",21);
+System.out.println(p.getName());
+System.out.println(p.name);
+System.out.println(p.address);
+System.out.println(p.age);
+System.out.println(p.gender);
+}
+}
+​
+Q.2)
+Sol-
+class Employee extends Person{
+	Integer empId, salary;
+	String company;
+	Employee(String name,String gender,String address,Integer age,Integer empId,Integer salary,String company)
+    {
+      this.empId= empId;
+      this.salary= salary;
+      this.company= company;
+    }
+	Employee e= new Employee("abc","female","Delhi",21,2133,60000,xyz);
+	
+	println(e.empId);
+	println(e.salary);
+	println(e.@salary);
+	
+}
+
+Q.3)
+Sol-
+ public static void patternn(int n)
+    {
+        int k;
+        for(int i=0;i<=n;i++)
+        {
+            k = 1<<i;
+        for(int j=1;j<=k;j++)
+        {
+        System.out.print("* ");
+        }
+        System.out.println("\n");}
+    }
+    // passing int n=3;
+    
+    Q.4)
+    Sol-
+    class Person{
+    String company;
+    Integer empId,salary;
+    
+    String toString(){
+    return "${this.name} is a man aged ${this.age} who lives at ${this.address}.He works for ${this.company} with employee id ${this.empId} and draws \$\$\$\$\$\$ lots of money!!!.";
+    }
+    }
+    Person p= new Person(
+    name: "Sachin";
+    age: 24;
+    city: "Delhi";
+    employer: "Intelligrape";
+    emp_id:12;
+  )
+  println(p)
+
+Q.5)
+Sol-
+
+Q.7)
+Sol- //method -1
+for(int i=1;i<=10;i++){
+        println(3*i)
+    }
+    
+    //method- 2
+    def i=3
+    10.times{println(i)
+    i+=3;
+	}
+	
+  //method-3
+  def multiple= {3,6,9,12,15,18,21,24,27,30};
+  println "$multiple"
+  
+ Q.8)
+ Sol-
+ 

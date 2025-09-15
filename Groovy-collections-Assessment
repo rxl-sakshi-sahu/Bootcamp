@@ -1,0 +1,148 @@
+0)
+Sol- 
+List l=[]
+l[11]="myelement"
+println l[11]
+println l.get(5)
+println l
+​
+O/P- myelement
+null
+[null, null, null, null, null, null, null, null, null, null, null, myelement]
+
+
+1)
+Range r = 1..10
+println r.findAll{it%2==0}
+
+O/p- [2, 4, 6, 8, 10]
+
+2) List list= [1,2,3,4,5,2,1,2,3]
+   println list as Set
+   
+   println list.unique() // without using set
+
+3)
+List l1=[11,12,13,14]
+List l2=[13,14,15]
+List l3= l1-l2
+println l3
+​
+O/p- [11, 12]
+
+4)
+List l1=[11,12,13,14]
+List l2=[13,14,15]
+List l3=l1.​intersect(l2)
+println l3
+​
+5)Remove all records from a list whose index is odd
+
+
+6)
+​List l= [1,2,3,"element1",0.3,[2,4,6],0..10]
+println l[3].class
+
+The class name of 1st, 2nd and 3rd element is Integer, 4th is String,5th is BigDecimal, 6th is ArrayList, 7th is IntRange,8th is NullObject
+l.get(6).get(9) will give output 9
+
+7)
+List list= [14,12,11,10,16,15,12,10,99,90,14,16,35]
+List l2= list.sort()
+
+println l2.sort{a,b-> a>b?b:a} as Set
+
+8) A.
+class Employee{
+    public String name
+    public Integer age,salary;
+public Employee(int name,int age,String salary)
+{
+    this.name= name;
+    this.age= age;
+    this.salary= salary;
+
+}
+public String toString(){
+return "${this.name}= ${this.salary}"
+}
+Emp e1= new Emp("Emp1",21,5000)
+Emp e2= new Emp("Emp2",22,10000)
+Emp e3= new Emp("Emp3",21,15000)
+Emp e4= new Emp("Emp4",21,15000)
+Emp e5= new Emp("Emp5",21,15000)
+Emp e6= new Emp("Emp6",21,15000)
+Emp e7= new Emp("Emp7",21,15000)
+Emp e8= new Emp("Emp8",21,15000)
+Emp e9= new Emp("Emp9",21,15000)
+Emp e10= new Emp("Emp10",21,15000)
+List list= [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10]
+println list.findAll(it.salary <5000)
+}
+
+8- B.
+
+9- [this, string, needs, to, be, split]
+
+10
+Range r= 1..10
+println r.get(0)
+println r.get(1)
+println r.get(9)
+​
+11
+Range r= 1..10
+println r.collect{ c-> return 2*c}
+println r.collect{ c-> return 12*c}
+
+​12
+
+13
+String s= "abcabcbab"  // finding the occurence of 'a'
+s.findAll({it->it=='a'}).size()
+
+14
+Range r= 1..100
+println r.collect{ c-> if(c%3==0 && c%5==0) return "FizzBuzz"
+else if(c%3==0) return "fizz"
+else if(c%5==0) return "Buzz"
+else
+return c}
+​​
+15
+
+16
+
+Map mp=["Pragya":21, "Pratigya":22, "Rishabh":21,"Shivam":22,"Mayank":21,"Ishan":22,"Vishal":21,"Ashish":21,"Rishita":21,"Deeksha":22]
+
+17
+mp.each{ key,value ->  
+println key+">>"+value}​ //method-1
+
+mp.eachWithIndex{ key,value ->  
+println key+">>"+value}​  //method-2
+
+
+
+18
+Map m1=['a':1,'b':2,'c':3,'d':4]
+Map m2=['m':10,'n':20,'o':30,'p':40]
+Map m3 = m1+m2
+
+​m3.each{ key,value ->  println key+"."+value} 
+​
+19) map.class gives null while map.getClass() gives LinkedHashMap
+
+20) Yes it is a valid construction as value will get override and the latest value will be considered for the existing key.
+m['2'] will print 5
+
+21) Map m =['1':2,'2':3,'3':4,'2':5]
+println m.containsKey('2')​
+
+22)Map m =['Computing':['computing':600,'Information Systems':300],'Engineering':['Civil':200,'Mechanical':100],'Management':['Management':800]]
+m.flatten()
+m.each{ key,value -> println key +":"+value}
+
+23)
+
+​

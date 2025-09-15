@@ -1,0 +1,408 @@
+				JAVA ASSIGNMENT
+
+1) Take 20 integer inputs from user and print the following:
+number of positive numbers
+number of negative numbers
+number of odd numbers
+number of even numbers
+number of 0s. 
+
+Sol - 
+class HelloWorld {
+    public static void main(String[] args) {
+      //int n= 20;
+      Scanner sc=new Scanner(System.in);
+      int[] arr= new int[20];
+      for(int i=0;i<20;i++)
+      {
+          if(sc.hasNextInt())
+          {
+              arr[i]= sc.nextInt();
+          }
+      }
+      int pos=0,neg=0,odd=0,even=0,zeros=0;
+      for(int i=0;i<20;i++)
+      {
+          if(arr[i]>0)
+          {
+              pos++;
+          }
+          else if(arr[i]==0)
+          {
+              zeros++;
+          }
+          else
+          {
+              neg++;
+          }
+          if(arr[i]%2==0)
+              even++;
+          else
+              odd++;
+      }
+    
+          System.out.println("number of positive numbers are: "+ pos);
+          System.out.println("number of negative numbers are: "+ neg);
+          System.out.println("number of odd numbers are: "+ odd);
+          System.out.println("number of even numbers are: "+ even);
+          System.out.println("number of zeroes are: "+ zeros);
+      
+    }
+}
+
+2)Take an array of 10 elements. Split it into middle and store the elements in two dfferent arrays. E.g.-
+INITIAL array :
+58 24 13 15 63 9 8 81 1 78
+
+After spliting :
+58 24 13 15 63
+9 8 81 1 78
+
+Sol - 
+class HelloWorld {
+    public static void main(String[] args) {
+      //int n= 20;
+      Scanner sc=new Scanner(System.in);
+      int[] arr= new int[10];
+      int[] arr1= new int[5];
+      int[] arr2= new int[5];
+      for(int i=0;i<10;i++)
+      {
+              arr[i]= sc.nextInt();
+      }
+      for(int i=0;i<5;i++)
+      {
+              arr1[i]=arr[i];
+              arr2[i]=arr[i+5];
+      }
+    System.out.println("After splitting: ");
+    for(int i=0;i<5;i++)
+    {
+        System.out.print(arr1[i] + " ");
+    }
+    System.out.println("\n");
+    for(int i=0;i<5;i++)
+    {
+        System.out.println(arr2[i] + " ");
+    }
+    }
+}
+
+3)Create a class with a method that prints "This is parent class" and its subclass with another method that prints "This is child class". Now, create an object for each of the class and call
+
+1 - method of parent class by object of parent class
+2 - method of child class by object of child class
+3 - method of parent class by object of child class
+
+Sol - 
+
+class Base
+{
+    public void show(){
+    System.out.println("This is parent class");}
+}
+class Derived extends Base
+{
+    public void display(){
+    System.out.println("This is child class");}
+}
+class HelloWorld {
+    public static void main(String[] args) {
+    	 Base b= new Base();
+         Derived d= new Derived();
+         b.show();  //method of parent class by object of parent class
+         d.display(); //method of child class by object of child class
+         d.show(); //method of parent class by object of child class
+    }
+}
+
+4) Write a program to print the name, salary and date of joining of 10 employees in a company.
+Use array of objects.
+Sol - 
+class Employee {
+	public String name;
+	public int salary;
+	public int doj;
+	Employee(String name, int salary,int doj)
+	{
+	    this.name = name;
+	    this.salary = salary;
+	    this.doj = doj;
+	}
+	public void show()
+	{
+		System.out.println(2	qz"Employee name is: "
+						+ name + " ,salary: "+ salary + " ,date of joining: "+ doj);
+	}
+}
+class HelloWorld {
+
+	public static void main(String args[])
+	{
+
+		Employee[] arr = new Employee[10];
+		Scanner sc = new Scanner(System.in);
+		for(int i=0; i<10;i++)
+		{
+		   System.out.println("Enter name");
+		   String name = sc.nextLine();
+		   System.out.println("Enter salary");
+		   int salary = sc.nextInt();
+		   sc.nextLine();
+		   System.out.println("Enter date of joining");
+		   int doj= sc.nextInt();
+		   sc.nextLine();
+		   arr[i] = new Employee(name,salary,doj);
+		}
+    for(int i=0;i<10;i++)
+    {
+        arr[i].show();
+    }
+}
+}
+
+5)Write a program that takes your full name as input and displays the abbreviations of the first and middle names except the last name which is displayed as it is. For example, if your name is Robert Brett Roser, then the output should be R.B.Roser.
+Sol - 
+ public static void main(String[] args)
+{
+	Scanner sc = bew Scanner(System.in);
+	System.out.println("Enter first name");
+	String first_name = sc.nextLine();
+	System.out.println("Enter first name");
+	String mid_name = sc.nextLine();
+	System.out.println("Enter first name");
+	String l_name = sc.nextLine();
+	
+	String abb_name= first_name.charAt(0) + "."+ mid_name.charAt(0) + "."+ l_name;
+	System.out.println("abb_name);
+}
+
+6) What is the difference between equals() method and equality operator (==) in Java?
+Sol -  equals() checks and compare the values in the object whereas (==)  checks if both objects point to the same memory location or reference.
+
+7) What is the difference between StringBuilder and StringBuffer?
+Sol -  StringBuilder is not thread safe while StringBuffer is thread safe.
+
+8) Explain the use of final keyword in variable, method and class.
+Sol -  The final keyword in variable makes the variable constant that means the value once initialised cannot be changed further.
+   In method, if we use final keyword then that method cannot get override
+   In class, if we use final keyword then that class cannot get extended.
+   
+9) Is it possible that the ‘finally’ block will not be executed? If yes then list the case
+Sol -  Yes,there may occur a case when the System.exit() method is called in the try block or JVM get crashes due to some reasons before the execution of finally block,in that case finally block will not be executed.
+
+10) What are shallow copy and deep copy in java?
+Sol -  In shallow copy,no memory is allocated,reference is copied for objects fields. Also changes in duplicate object will reflect in the original object.
+While in deep copy, new memory in heap is allocated and reference is not copied from object fields.Changes in duplicate object won't reflect in the original object.
+
+11) What will be the output of below program?
+
+public class TestClass
+{
+public static void main(String[] args)
+{
+int a = 30;
+int b = 40;
+int c = 10;
+int expression = (a * b)/(a - b + c);
+System.out.println("Result: " +expression);
+}
+}
+Sol - 
+Arithmetic Exception: divide by zero will occur 
+
+12)Why it is always recommended to keep the clean-up activities like closing the I/O resources or DB connections inside a finally block?
+Sol- 
+This is because finally block is always executed whether exceptions occur in try block or not. By keeping the cleanup operations in finally block, you will ensure that those operations will be always executed irrespective of whether exception is occurred or not.
+
+13)What happens if the below code is executed?
+
+public class Test
+{
+public static void main(String[] args)
+{
+int[] list = new int[4];
+System.out.println(list[4]);
+}
+}
+
+Sol- 
+ An exception will occur - ArrayIndexOutOfBoundsException
+ 
+ 
+14)How many objects will be created for the following codes:
+
+A.
+
+String str1 = "abc"; //Line1
+String str2 = new String("abc"); //Line2
+
+B.
+
+String str1 = "abc"; //Line1
+String str2 = "abc"; //Line2
+
+C.
+
+String str1 = new String("abc"); //Line1
+String str2 = new String("abc"); //Line2
+
+Sol - 
+	A. 2 objects will be created( 1 for str1 and as abc is already in string pool so 1 for new str2)
+	B. 1 (both will point towards the same obj)
+	C. 3 (as abc is not in string pool, str1 will create 2 obj and str2 will create 1)
+
+15)How do you check whether a String is empty in Java?
+-> isEmpty() method can be used in Java to check an empty string and will  return the result true and false accordingly.
+
+16) Write a program in java to join two arraylists into one arraylist.
+
+Sol-
+public static void main(String[] args)
+{
+	ArrayList<Integer>A = new ArrayList<>();
+	ArrayList<Integer>A1 = new ArrayList<>(Arrays.asList(1,2,3,4));
+	ArrayList<Integer>A2 = new ArrayList<>(Arrays.asList(5,6,7,8));
+	int n1= A1.size(), n2=A2.size();
+	for(int i=0; i < n1; i++)
+	{	
+	   A.add(A1.get(i));
+	}
+	for(int i=0; i < n2; i++)
+	{	
+	   A.add(A1.get(i));
+	}
+	System.out.println(A);
+}
+
+17)Which of the following methods can be used to set every element of the List to a specified value?
+
+set()
+add()
+complete()
+fill()
+Sol- fill()
+
+18)Which of the following guarantees type-safety in a collection?
+
+Abstract Classes
+Interface
+Collection
+Generics
+
+Sol- Generics 
+
+19)Differentiate between Comparable and Comparator in the context of Java.
+Sol- In comparable,objects must be of same type and the class gets modified while objects of different classes are considered in comparator and doesn't affect the class.
+
+20) Write a Java program to create and throw custom exceptions.
+Sol-
+class CustomException extends Exception {
+	public CustomException(String s)
+	{
+		super(s);
+	}
+}
+
+public class Main {
+	public static void main(String args[])
+	{
+		try {
+			throw new CustomException("Custom exception");
+		}
+		catch (CustomException ex) {
+			System.out.println("Caught");
+			System.out.println(ex.getMessage());
+		}
+	}
+}
+
+21)What is the output of the below code?
+
+class IABC{
+public static void main(String args[])
+{
+String obj = "Hello";
+String obj1 = "ABC";
+String obj2 = "Hello";
+System.out.println(obj.equals(obj1) + " " + obj.equals(obj2));
+}
+
+Sol- false true
+
+22) Create a class named 'Member' having the following members:
+
+Data members
+1 - Name
+2 - Age
+3 - Phone number
+4 - Address
+5 - Salary
+
+It also has a method named 'printSalary' which prints the salary of the members.
+
+Two classes 'Employee' and 'Manager' inherits the 'Member' class. The 'Employee' and 'Manager' classes have data members 'specialization' and 'department' respectively. Now, assign name, age, phone number, address and salary to an employee and a manager by making an object of both of these classes and print the same.
+
+Sol- 
+class Member{
+String name, number, address;
+int age,salary;
+
+	public void printSalary()
+	{
+	  System.out.println("Salary is:" + salary);
+	}
+}
+
+class Employee extends Member{
+	String specialization;
+	Employee(String name, String number,String specialization,String address, int age, int salary){
+	this.name= name;
+	this.number = number;
+	this.address = address;
+	this.age = age;
+	this.salary = salary;
+	this.specialization = specialization;
+}
+@Override
+public String toString(){
+return "name"+ name+ "\nNumber"+ number+ "\nAddress"+address+"\nAge"+ age+"\nSalary"+salary+"\nSpecialization"+specialization;
+}
+}
+class Manager extends Member{
+	String specialization;
+	Employee(String name, String number,String specialization,String address, int age, int salary){
+	this.name= name;
+	this.number = number;
+	this.address = address;
+	this.age = age;
+	this.salary = salary;
+	this.department = department;
+}
+@Override
+public String toString(){
+return "name"+ name+ "\nNumber"+ number+ "\nAddress"+address+"\nAge"+ age+"\nSalary"+salary+"\nDepartment"+department;
+}
+class HelloWorld{
+	public static void main(String args[])
+	{
+	  Employee e = new Employee();
+	  Manager m = new Manager();
+	  System.out.println(e);
+	  System.out.println(m);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
