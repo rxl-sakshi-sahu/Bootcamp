@@ -1,0 +1,36 @@
+Overloading
+
+Methods name same, parameters different, return type can also be different
+
+************************************************************
+1) Method overloading supports polymorphism
+2)
+If no matching method is found. Java can automatically convert an integer into a double
+
+class OverloadDemo {
+void test() {
+System.out.println("No parameters");
+}
+void test(double a) {
+System.out.println("Inside test(double) a: " + a);
+}
+}
+class Overload {
+public static void main(String args[]) {
+OverloadDemo ob = new OverloadDemo();
+int i = 88;
+ob.test();
+ob.test(10, 20);
+ob.test(i); // this will invoke test(double)
+}
+
+************************************************************
+Static - 
+
+Instance variables declared as static are, essentially, global variables. When objects of
+its class are declared, no copy of a static variable is made. Instead, all instances of the class
+share the same static variable.
+Methods declared as static have several restrictions:
+• They can only directly call other static methods.
+• They can only directly access static data.
+• They cannot refer to this or super in any way

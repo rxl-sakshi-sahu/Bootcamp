@@ -1,0 +1,170 @@
+Collections
+
+// list.getClass().getName() - 
+
+// Arraylist, linkedlist are not thread safe
+
+Arraylist - 
+
+1) maintains order
+2) can shrink or increase size
+
+Internal working - Default capacity- 10 , then grows by 1.5 times initial capacity
+(internally uses array)
+
+Syntax -
+
+List>Integer>list = new ArrayList<>()
+List<String>list1 = Arrays.asList("Monday", "Tuesday") // another way , but cannot write ArrayList<String>list1 as asList method returns its Parent i.e; List
+
+List<String>list2 = List.of(1,2,3,4)  // returns unmodifiable list, can't even set/replace
+
+******* asList fixed size ki list return krta h, can't add any new element, but can change the existing one by using set
+
+------------------------------------- 
+
+List>Integer>list = new ArrayList<>()
+list.add(1)
+list.add(2)
+list.add(3)
+list.remove(1) // it will not remove 1 from the list, will take index and remove 2,
+so to remove 1, use object because remove() takes obj
+-> list.remove(Integer.valueOf(1))   // used wrapper class
+
+
+Collections.sort(list);  // O(n)
+
+Methods used - add(), remove(), set(), addAll(), contains(), toArray(),sort()
+
+=========================================================================================
+
+
+Comparator - (interface for custom sort based on +ve, -ve and 0 value of compare function)
+
+class MyComparator implements Comparator<Integer>{
+@Override
+
+public int compare(Integer o1, Integer o2){  // agar int compare me int -ve aata h to o1 comes before, and vice versa
+	return o1-o2;  // ascending (-ve)
+	}
+}
+
+
+list.sort(new MyComparator());
+
+// OR SIMPLY USE LAMBDA EXPRESSION as Comparator is functional interface
+
+list.sort((a,b) -> a-b) // for asc 
+list.sort((a,b)-> b - a) // for desc
+
+
+==================================================================================================
+
+LinkList  - uses doubly link list internally
+
+Operations - add(), get(), addFirst(k), addLast(), getFirst(),getLast(), remove(), removeFirst(), removeLast(), removeFirstOccurence(),
+removeLastOccurence(), removeAll(), removeIf(Predicate)
+
+ LinkedList<String>list =  LinkedList<>()   // can also use List but then above methods will not be accessible, so using LinkedList<>
+Can aslo create like
+ LinkedList<String>animals = new LinkedList<>(Arrays.asList("Cat","dog"))
+ 
+ ======================================================================================
+ 
+ Vector - uses array to store elements, doubles the size on size increment
+ in ArrayList, we couldn't use capacity to find that size but here we can
+sout(vector.capacity());   // initial capacity 10 hoti h
+
+Key points-
+-legacy synchronized collection class that implements list interface
+-provides thread safety but with a performance cost in single threaded environments
+
+ 
+ =======================================================================
+ 
+ Map - do not maintain insertion order, only one key can be null
+ 
+  Map<Integer,String>map = new HashMap<>();
+	   map.put(1, "efg");
+	   map.put(2, "abc");
+	   map.put(3,"bcd");
+	   
+	   for(int i: map.keySet()){
+	       System.out.println(map.get(i));
+	   }
+	   
+	   // can iterate like this as well to access key, value, can also set it
+	   for(Map.Entry<Integer,String>mp : map.entrySet()){
+	       System.out.println(mp.getKey() + mp.getValue());
+	   }
+ 
+ Internal working- First, the key is passed to hash function which generate a unique hashcode, which determines where the key-value pair should be stored. (index = hashcode % n) where n is arraysize
+ 
+since different keys can generate same index(called collision), HashMap then uses Linked list for that(Balanced binary or Red Black tree after Java 8).
+So if multiple pairs occur, they are stored in linkedlist inside bucket
+
+takes O(1) time in put(), get() operations (assuming no collisions)
+
+
+
+==================================================================================
+
+LinkedHashMap - maintains insertion order, uses double linked list
+
+LinkedHashMap<String,Integer> linkedHashMap = new  LinkedHashMap<>(initialCapacity, loadFactor,accessOrder)
+
+we can pass these arguments on our own like (12, 0.3f, true)
+
+when accessOrder is true, the the element which we access comes to last in order,
+ex - 
+
+linkedHashMap.put("orange", 10);
+linkedHashMap.put("apple", 20);
+linkedHashMap.put("grapes", 30);
+
+linkedHashMap.get("orange") 
+
+for(Map.Entry<String,Integer>entry: linkedHashMap.keySet()){
+		sout(entry.getKey() + entry.getValue());
+}
+
+// apple:20, grapes:30, orange:10
+
+Business usecase- Least recently used element hum easily remove kr paenge, if we want to in future, kyunki vo upar wale honge, recently used ot last me aa jate h isliye
+
+==============================================================================
+
+
+
+ Springboot - The extension of the larger Spring Framework, designed to simplify the development process by providing a streamlined way to configure and deploy applications. 
+ 
+ Inversion of Control is a design principle where the control of object creation and dependency management is shifted (inverted) from the application code to the framework (like Spring).
+
+Normally:
+Your class creates its own dependencies.
+
+With IoC:
+The framework provides dependencies to your class.
+
+
+When Spring starts the application, it scans for components.
+For any class marked with @Component, Spring creates an object (a bean).
+If any @Autowired field/constructor/setter is found, Spring:
+Finds a matching bean from the context
+Injects it automatically
+
+@Id declares id as the primary key.
+@GeneratedValue(...) tells JPA how to generate the value for this key.
+GenerationType.AUTO (default)
+
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+}
+
+
+
+

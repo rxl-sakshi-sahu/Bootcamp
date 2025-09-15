@@ -1,0 +1,97 @@
+Domain driven approach :
+
+1)divide into events = like user registered, login, created message, message sent, message delivered, msg deleted/received.
+
+2) sequence them as above
+
+Group the logical related events into one bounded context
+like - user register,login,logout
+msg sent,delivered,deleted
+authentication, authorisation
+notification bounded context
+
+
+for each bounded context,whatever the objects on which they are working, from each of them we can consider one microservices
+like User management microservices, message microservice, notification  microservice
+
+Amazon Prime also have two distributed servcies - audio and video -> they merged it to monolithic
+
+
+📌 Example
+
+Imagine we’re designing a Banking System:
+
+Entity: Customer, BankAccount
+Value Object: Money (amount + currency), Address
+Aggregate: BankAccount (with transactions inside it)
+Service: TransferService (handles money transfer between accounts)
+Repository: BankAccountRepository (save/find accounts)
+Bounded Contexts:
+Accounts Context
+Loans Context
+Payments Context
+
+*******************************************************8
+
+How microservices  communicate -
+
+1) Synchronous- (RestTemplate, RestClient - without spring cloud, FeignClient- for spring cloud)
+
+* RestTemplate - legacy way to call RestAPIs in spring app
+limitations - 
+1) so many overloaded methods, so hard to maintain 
+2) it was built before concepts like retry, circuit breakers, so adding support means more overloaded methods,not user friendly
+3) its in maintainence mode, i.e, no new feature, onlt bug fixes
+
+
+* RestClient
+
+*FeignClient
+
+
+Hardcoding url is not good practice for more than one service as it may lead to -
+- Single point of failure
+- No load balancing
+- Tight coupling
+- Difficulty in testing
+	
+Solution - SERVICE DISCOVERY (EUREKA) -> Eureka server, eureka client
+
+Put annotation @EnableEurekaServer to add necessary beans
+
+ Eureka server stores data in memory
+ 
+ 
+ 
+ Load balancer helps in distributing traffic to multiple instances of a server (2 types- server side and client side)
+ while createing RestTemplate, will annotate with @LoadBalanced
+ FeignClient internally uses load balancer automatically
+ 
+ By default spring cloud load balancer picks RoundRobinLoadBalancer algorithm (attached with the particular service id)
+ second algo is RandomLoadBalancer
+ 
+Can create custom loadbalancer too
+
+
+
+
+How to build a fault tolerant microservice ?
+
+system should run without failure or crash
+
+if sudden burst of request comes form order service to product service, all threads will get blocked
+Eventually, services will run out of threads and start rejecting the request - Called CASCADING FAILURE
+
+i.e; issue is at product service, but now propogated to other services too
+
+one service bring down the whole system - thats why we need fault tolerance
+
+To avoid this, we have Resilience4j framework 
+
+RateLimiter -> BulkHead -> TimeLimiter -> CircuitBreaker -> Retry
+
+RateLimiter - controls number of requests allowed to a microservice in a given time window
+(protects our system from sudden traffic spike)
+
+
+
