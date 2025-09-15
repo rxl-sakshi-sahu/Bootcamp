@@ -1,0 +1,25 @@
+1) How java follows "Write Once And Run Anywhere" concept?
+-> Java is "Write Once And Run Anywhere" because once we write the program, the compiler generates bytecode and that bytecode can be run anywhere if we have JDK installed in it.
+
+2) Do java support pass by value and pass by reference?
+-> Java support pass by value
+
+3) Write a program to add 3 to the ASCII value of the character 'd' and print the equivalent character.
+-> char ch = 'd';
+   ch = ch + 3;
+   System.out.println(ch);  
+   
+ 4)What is the size in bits for a 'byte' data type.
+ -> 1 byte have 8 bits.
+ 
+ 5)-c,e
+    
+  6) a, c
+  7) e,h
+  8) 1
+  9) 1,3
+  10) default
+      two
+      
+   11) 0 1
+   12)30
